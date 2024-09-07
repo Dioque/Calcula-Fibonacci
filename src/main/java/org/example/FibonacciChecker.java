@@ -1,11 +1,22 @@
 package org.example;
 
-public class CalculaFibonacci {
-    public int calculaFibonacci(int n){
-        if (n <= 1){
-            return n;
+public class FibonacciChecker {
+    public boolean calculaFibonacci(int n){
+        int a = 0, b = 1;
+
+        if (n == 0 || n == 1) {
+            return true;
         }
-        return calculaFibonacci(n - 1) + calculaFibonacci(n - 2);
+
+        int c;
+
+        while (b < n){
+            c = a + b;
+            a = b;
+            b = c;
+        }
+
+        return b == n;
     }
 
 
